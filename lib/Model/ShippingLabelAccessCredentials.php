@@ -213,7 +213,7 @@ class ShippingLabelAccessCredentials implements ModelInterface, ArrayAccess
     public function getHsProviderAllowableValues()
     {
         return [
-            self::HS_PROVIDER_HURRICANE
+            self::HS_PROVIDER_HURRICANE,
             self::HS_PROVIDER_UPS
         ];
     }

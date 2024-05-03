@@ -184,8 +184,8 @@ class CreateShippingLabelRequest implements ModelInterface, ArrayAccess
     public function getLabelTypeAllowableValues()
     {
         return [
-            self::LABEL_TYPE_FORWARD
-            self::LABEL_TYPE__RETURN
+            self::LABEL_TYPE_FORWARD,
+            self::LABEL_TYPE__RETURN,
             self::LABEL_TYPE_FORWARD_RETURN
         ];
     }
