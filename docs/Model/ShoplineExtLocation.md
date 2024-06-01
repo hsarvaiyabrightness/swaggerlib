@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **country** | **string** |  | [optional] 
 **postal_code** | **string** |  | [optional] 
 **province** | **string** |  | [optional] 
+**province_code** | **string** |  | [optional] 
 **city** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **address1** | **string** |  | [optional] 

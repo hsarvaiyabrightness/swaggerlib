@@ -1,13 +1,13 @@
 # Swagger\Client\LocationsApi
 
-All URIs are relative to *https://st01.api.itembase.com/connectivity*
+All URIs are relative to *https://api.itembase.com/connectivity*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLocations**](LocationsApi.md#getlocations) | **GET** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/locations | Get Locations
+[**getLocations**](LocationsApi.md#getlocations) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/locations | Get Locations
 
 # **getLocations**
-> \Swagger\Client\Model\GetLocationsResponse getLocations($instance_id, $connection_id, $country, $zip, $test_mode)
+> \Swagger\Client\Model\GetLocationsResponse getLocations($body, $instance_id, $connection_id, $test_mode)
 
 Get Locations
 
@@ -26,14 +26,13 @@ $apiInstance = new Swagger\Client\Api\LocationsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Swagger\Client\Model\GetLocationsRequest(); // \Swagger\Client\Model\GetLocationsRequest | 
 $instance_id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $connection_id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$country = "country_example"; // string | 
-$zip = "zip_example"; // string | 
 $test_mode = false; // bool | 
 
 try {
-    $result = $apiInstance->getLocations($instance_id, $connection_id, $country, $zip, $test_mode);
+    $result = $apiInstance->getLocations($body, $instance_id, $connection_id, $test_mode);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocationsApi->getLocations: ', $e->getMessage(), PHP_EOL;
@@ -45,10 +44,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\GetLocationsRequest**](../Model/GetLocationsRequest.md)|  |
  **instance_id** | [**string**](../Model/.md)|  |
  **connection_id** | [**string**](../Model/.md)|  |
- **country** | **string**|  |
- **zip** | **string**|  |
  **test_mode** | **bool**|  | [optional] [default to false]
 
 ### Return type
@@ -61,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

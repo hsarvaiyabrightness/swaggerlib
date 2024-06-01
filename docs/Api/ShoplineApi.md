@@ -1,6 +1,6 @@
 # Swagger\Client\ShoplineApi
 
-All URIs are relative to *https://st01.api.itembase.com/connectivity*
+All URIs are relative to *https://api.itembase.com/connectivity*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **store_url** | **string** |  | [optional] 
 **api_key** | **string** |  | 
 **api_secret** | **string** |  | 
+**store_id** | **string** |  | [optional] 
 **webhook_url** | **string** |  | [optional] 
 **hs_provider** | **string** |  | [optional] 
 

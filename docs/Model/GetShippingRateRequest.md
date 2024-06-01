@@ -20,9 +20,12 @@ Name | Type | Description | Notes
 **height** | **string** |  | [optional] 
 **dim_unit** | **string** |  | [optional] 
 **currency** | **string** |  | [optional] 
+**total_price** | **double** |  | [optional] 
 **label_type** | **string** |  | [optional] 
 **label_format** | **string** |  | [optional] 
 **customs_info** | [**\Swagger\Client\Model\CustomsInfo**](CustomsInfo.md) |  | [optional] 
+**customs_duty** | **string** |  | [optional] 
+**alternative_send_to** | [**\Swagger\Client\Model\AlternativeSendTo**](AlternativeSendTo.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -20,10 +20,11 @@ Name | Type | Description | Notes
 **service_charge** | **string** |  | [optional] 
 **service_options_charge** | **string** |  | [optional] 
 **tax_type** | **string** |  | [optional] 
-**tax_charge** | **string** |  | [optional] 
-**total_charge** | **string** |  | [optional] 
-**total_charge_with_tax** | **string** |  | [optional] 
-**ship_discount** | **string** |  | [optional] 
+**tax_charge** | **double** |  | [optional] 
+**total_charge** | **double** |  | [optional] 
+**total_charge_with_tax** | **double** |  | [optional] 
+**customs_duty** | **double** |  | [optional] 
+**ship_discount** | **double** |  | [optional] 
 **delivery_date** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

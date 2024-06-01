@@ -82,6 +82,25 @@ $apiInstance = new Swagger\Client\Api\AuthenticationApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Swagger\Client\Model\ShippingLabelUpdateCredentials(); // \Swagger\Client\Model\ShippingLabelUpdateCredentials | 
+$instance_id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$connection_id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$test_mode = false; // bool | 
+
+try {
+    $result = $apiInstance->patch($body, $instance_id, $connection_id, $test_mode);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AuthenticationApi->patch: ', $e->getMessage(), PHP_EOL;
+}
+
+
+$apiInstance = new Swagger\Client\Api\AuthenticationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $instance_id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $connection_id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -115,11 +134,12 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://st01.api.itembase.com/connectivity*
+All URIs are relative to *https://api.itembase.com/connectivity*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthenticationApi* | [**create**](docs/Api/AuthenticationApi.md#create) | **POST** /instances/{instanceId}/connections/shipping/auth/v2 | Create a connection
+*AuthenticationApi* | [**patch**](docs/Api/AuthenticationApi.md#patch) | **PATCH** /instances/{instanceId}/connections/{connectionId}/shipping/auth/v2 | Update the connection
 *AuthenticationApi* | [**remove**](docs/Api/AuthenticationApi.md#remove) | **DELETE** /instances/{instanceId}/connections/{connectionId}/shipping/auth/v2 | Removes a connection
 *AuthenticationApi* | [**update**](docs/Api/AuthenticationApi.md#update) | **PUT** /instances/{instanceId}/connections/{connectionId}/shipping/auth/v2 | Update the connection
 *HarmonizedSystemCodesApi* | [**getHsCodes**](docs/Api/HarmonizedSystemCodesApi.md#gethscodes) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/hs | Get Hs codes for list of products
@@ -133,7 +153,18 @@ Class | Method | HTTP request | Description
 *LinnworksApi* | [**getUserConfig**](docs/Api/LinnworksApi.md#getuserconfig) | **POST** /instances/{instanceId}/connections/shipping/api/v2/extint/linnworks/userConfig | Get User Config
 *LinnworksApi* | [**updateUserConfig**](docs/Api/LinnworksApi.md#updateuserconfig) | **POST** /instances/{instanceId}/connections/shipping/api/v2/extint/linnworks/userConfig/update | Update User Config
 *LinnworksApi* | [**updateUserConfig1**](docs/Api/LinnworksApi.md#updateuserconfig1) | **POST** /instances/{instanceId}/connections/shipping/api/v2/extint/linnworks/userConfig/delete | Delete User
-*LocationsApi* | [**getLocations**](docs/Api/LocationsApi.md#getlocations) | **GET** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/locations | Get Locations
+*LocationsApi* | [**getLocations**](docs/Api/LocationsApi.md#getlocations) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/locations | Get Locations
+*OrdersManagementApi* | [**createOrder**](docs/Api/OrdersManagementApi.md#createorder) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/orders | Create order
+*OrdersManagementApi* | [**deleteOrder**](docs/Api/OrdersManagementApi.md#deleteorder) | **DELETE** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/orders/{orderNumber} | Delete order
+*OrdersManagementApi* | [**updateOrder**](docs/Api/OrdersManagementApi.md#updateorder) | **PUT** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/orders/{orderNumber} | Update order
+*ProductsManagementApi* | [**deleteProduct**](docs/Api/ProductsManagementApi.md#deleteproduct) | **DELETE** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/products | Delete product
+*ProductsManagementApi* | [**getProduct**](docs/Api/ProductsManagementApi.md#getproduct) | **GET** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/products | Get product
+*ProductsManagementApi* | [**saveProduct**](docs/Api/ProductsManagementApi.md#saveproduct) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/products | Save product
+*RateRulesControllerApi* | [**getSettings1**](docs/Api/RateRulesControllerApi.md#getsettings1) | **GET** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/rate/rules | Get All Rules
+*RateRulesControllerApi* | [**saveSettings1**](docs/Api/RateRulesControllerApi.md#savesettings1) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/rate/rules | Save Rate Rules
+*SettingsControllerApi* | [**getSettings**](docs/Api/SettingsControllerApi.md#getsettings) | **GET** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/settings | Get Settings
+*SettingsControllerApi* | [**saveSettings**](docs/Api/SettingsControllerApi.md#savesettings) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/settings | Save Settings
+*SettingsControllerApi* | [**updateSettings**](docs/Api/SettingsControllerApi.md#updatesettings) | **DELETE** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/settings | Delete Settings
 *ShipmentInfoApi* | [**orderShipmentInfo**](docs/Api/ShipmentInfoApi.md#ordershipmentinfo) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/shipment/order/info | Get Order Shipment Info
 *ShipmentInfoApi* | [**trackShipment**](docs/Api/ShipmentInfoApi.md#trackshipment) | **GET** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/shipment/track | Track Shipment
 *ShippingLabelApi* | [**cancelShippingLabel**](docs/Api/ShippingLabelApi.md#cancelshippinglabel) | **DELETE** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/label | Cancel Shipping Label
@@ -141,6 +172,7 @@ Class | Method | HTTP request | Description
 *ShippingLabelApi* | [**getShippingLabel**](docs/Api/ShippingLabelApi.md#getshippinglabel) | **GET** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/label | Get Shipping Label
 *ShippingRateApi* | [**getShippingRate**](docs/Api/ShippingRateApi.md#getshippingrate) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/rate | Get Shipping Rate
 *ShippingServicesApi* | [**getServices**](docs/Api/ShippingServicesApi.md#getservices) | **GET** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/services | Get Shipping Services
+*ShopifyApi* | [**getRates1**](docs/Api/ShopifyApi.md#getrates1) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/extint/shopify/rates | Get Rates
 *ShoplineApi* | [**getRates**](docs/Api/ShoplineApi.md#getrates) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/extint/shopline/rates | Get Rates
 *TaxAndDutiesApi* | [**getQuotes**](docs/Api/TaxAndDutiesApi.md#getquotes) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/tad/quotes | Get Taxes and Duties quotes
 *TaxAndDutiesApi* | [**submitParcel**](docs/Api/TaxAndDutiesApi.md#submitparcel) | **POST** /instances/{instanceId}/connections/{connectionId}/shipping/api/v2/tad/submitOrder | Submit parcel
@@ -149,6 +181,8 @@ Class | Method | HTTP request | Description
 
  - [Address](docs/Model/Address.md)
  - [AddressInfo](docs/Model/AddressInfo.md)
+ - [AlternativeSendTo](docs/Model/AlternativeSendTo.md)
+ - [AlternativeSendToAddress](docs/Model/AlternativeSendToAddress.md)
  - [AuthResponse](docs/Model/AuthResponse.md)
  - [AvailableService](docs/Model/AvailableService.md)
  - [CancelShippingLabelResponse](docs/Model/CancelShippingLabelResponse.md)
@@ -168,6 +202,7 @@ Class | Method | HTTP request | Description
  - [Event](docs/Model/Event.md)
  - [ExtendedProperty](docs/Model/ExtendedProperty.md)
  - [ExtendedPropertyItem](docs/Model/ExtendedPropertyItem.md)
+ - [GetLocationsRequest](docs/Model/GetLocationsRequest.md)
  - [GetLocationsResponse](docs/Model/GetLocationsResponse.md)
  - [GetLocationsResponseLocation](docs/Model/GetLocationsResponseLocation.md)
  - [GetShippingLabelResponse](docs/Model/GetShippingLabelResponse.md)
@@ -179,6 +214,7 @@ Class | Method | HTTP request | Description
  - [HsCodesClassificationStatusResponse](docs/Model/HsCodesClassificationStatusResponse.md)
  - [HsCodesRequest](docs/Model/HsCodesRequest.md)
  - [HsCodesResponse](docs/Model/HsCodesResponse.md)
+ - [InlineResponse200](docs/Model/InlineResponse200.md)
  - [InvalidItem](docs/Model/InvalidItem.md)
  - [Item](docs/Model/Item.md)
  - [LandedCost](docs/Model/LandedCost.md)
@@ -197,20 +233,27 @@ Class | Method | HTTP request | Description
  - [LinnworksUserConfigRequest](docs/Model/LinnworksUserConfigRequest.md)
  - [LinnworksUserConfigResponse](docs/Model/LinnworksUserConfigResponse.md)
  - [ListValue](docs/Model/ListValue.md)
+ - [Order](docs/Model/Order.md)
  - [OrderExtendedProperty](docs/Model/OrderExtendedProperty.md)
+ - [OrderItem](docs/Model/OrderItem.md)
+ - [OrderRequest](docs/Model/OrderRequest.md)
+ - [OrderResponse](docs/Model/OrderResponse.md)
  - [OrderShipmentInfoRequest](docs/Model/OrderShipmentInfoRequest.md)
  - [OrderShipmentInfoResponse](docs/Model/OrderShipmentInfoResponse.md)
  - [OrderShipmentInfoResponseProduct](docs/Model/OrderShipmentInfoResponseProduct.md)
  - [OrderShipmentInfoResponseShipment](docs/Model/OrderShipmentInfoResponseShipment.md)
  - [Package](docs/Model/Package.md)
  - [Product](docs/Model/Product.md)
+ - [ProductDto](docs/Model/ProductDto.md)
  - [ProductsRequest](docs/Model/ProductsRequest.md)
  - [ProductsResponse](docs/Model/ProductsResponse.md)
  - [QuoteRequest](docs/Model/QuoteRequest.md)
  - [QuoteResponse](docs/Model/QuoteResponse.md)
+ - [RateRulesData](docs/Model/RateRulesData.md)
  - [Reason](docs/Model/Reason.md)
  - [SendFrom](docs/Model/SendFrom.md)
  - [SendTo](docs/Model/SendTo.md)
+ - [ServiceAdditionalDescription](docs/Model/ServiceAdditionalDescription.md)
  - [ServiceConfigItem](docs/Model/ServiceConfigItem.md)
  - [ServiceCountry](docs/Model/ServiceCountry.md)
  - [ServiceLevel](docs/Model/ServiceLevel.md)
@@ -220,14 +263,25 @@ Class | Method | HTTP request | Description
  - [ShippingLabelAccessCredentials](docs/Model/ShippingLabelAccessCredentials.md)
  - [ShippingLabelUpdateCredentials](docs/Model/ShippingLabelUpdateCredentials.md)
  - [ShippingPackage](docs/Model/ShippingPackage.md)
+ - [ShopifyExtGetRateRequest](docs/Model/ShopifyExtGetRateRequest.md)
+ - [ShopifyExtGetRatesResponse](docs/Model/ShopifyExtGetRatesResponse.md)
+ - [ShopifyExtItem](docs/Model/ShopifyExtItem.md)
+ - [ShopifyExtLocation](docs/Model/ShopifyExtLocation.md)
+ - [ShopifyExtRateResponseData](docs/Model/ShopifyExtRateResponseData.md)
+ - [ShopifyRate](docs/Model/ShopifyRate.md)
  - [ShoplineExtGetRatesRequest](docs/Model/ShoplineExtGetRatesRequest.md)
  - [ShoplineExtGetRatesResponse](docs/Model/ShoplineExtGetRatesResponse.md)
  - [ShoplineExtItem](docs/Model/ShoplineExtItem.md)
  - [ShoplineExtLocation](docs/Model/ShoplineExtLocation.md)
  - [ShoplineExtRateResponseData](docs/Model/ShoplineExtRateResponseData.md)
+ - [SkyPostalLiveRatesSettingsData](docs/Model/SkyPostalLiveRatesSettingsData.md)
+ - [SplitByWeightRule](docs/Model/SplitByWeightRule.md)
  - [SubmitParcelRequest](docs/Model/SubmitParcelRequest.md)
  - [SubmitParcelResponse](docs/Model/SubmitParcelResponse.md)
  - [TrackShipmentResponse](docs/Model/TrackShipmentResponse.md)
+ - [UnitOfMeasurement](docs/Model/UnitOfMeasurement.md)
+ - [UpsLiveRatesSettingsData](docs/Model/UpsLiveRatesSettingsData.md)
+ - [V2SettingsBody](docs/Model/V2SettingsBody.md)
  - [Value](docs/Model/Value.md)
 
 ## Documentation For Authorization
